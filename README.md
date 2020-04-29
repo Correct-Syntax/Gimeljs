@@ -1,5 +1,7 @@
-# Gimeljs
+# Gimel.js
 Free & open-source library for easy DOM manipulation & effects library, written in pure javascript with no dependancies.
+
+Still in development...
 
 Features
 --------
@@ -14,7 +16,7 @@ Features
 Get Started
 -----------
 
-Just download and include the `<script src="gimeljs.js"></script>` in your HTML file.
+Just download and include the `<script src="gimel.min.js"></script>` in your HTML file.
 
 Documentation
 =============
