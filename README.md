@@ -21,12 +21,7 @@ Documentation
 
 Coming soon
 
-Changelogs
--------------
-
-Coming soon
-
 Want to Help?
--------------
+=============
 
 Help improving this library to meet the project goals is welcome. :)
