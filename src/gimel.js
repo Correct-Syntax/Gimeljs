@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Gimel.js v0.9.0 (C) 2020 : gimel.js
+ * Gimel.js v0.9.0 (C) 2020 [Correct Syntax] Noah Rahm and other contributers
  * Licensed under BSD 3 Clause
  * --------------------------------------------------------------------------
  */
