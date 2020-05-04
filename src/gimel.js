@@ -153,7 +153,7 @@ var $g = {
     
     whenScrollTo : function(a, b, c) {
         window.addEventListener("scroll", _ajsPoint);
-        var elem = document.querySelectorAll(a)[c||0].offsetTop - (window.innerHeight / 2);
+        var elem = document.querySelectorAll(a)[c||0].offsetTop + (window.innerHeight / 2);
         var once = false;
         function _ajsPoint() {
             if (pageYOffset > elem && once === false) {
