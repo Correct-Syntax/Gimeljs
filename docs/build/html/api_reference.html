@@ -1,0 +1,802 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gimel.js API Reference &mdash; Gimel.js 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Number Selector" href="othercomponents.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Gimel.js
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Gimel.js API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main-methods">Main Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#addhtml">AddHTML</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#addcss">AddCSS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#or">OR</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#addclass">AddClass</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#changecss">ChangeCSS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#removeelement">RemoveElement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#setproperty">SetProperty</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#addelement">AddElement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#syntax">syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#event-methods">Event Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#when">When</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id16">syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#whenscrollto">WhenScrollTo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id19">syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#whentimeup">WhenTimeUp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id22">syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#whentoggle">WhenToggle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id25">syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#effect-methods">Effect Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#typingeffect">TypingEffect</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id28">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fadein">FadeIn</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id31">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fadeinstart">FadeInStart</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id33">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="othercomponents.html">Number Selector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="othercomponents.html#css-transform">CSS transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="othercomponents.html#javascript-events">JavaScript Events</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Gimel.js</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Gimel.js API Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/api_reference.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gimel-js-api-reference">
+<h1>Gimel.js API Reference<a class="headerlink" href="#gimel-js-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="main-methods">
+<h2>Main Methods<a class="headerlink" href="#main-methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="addhtml">
+<span id="id1"></span><h3>AddHTML<a class="headerlink" href="#addhtml" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.addHTML(selector, html, [addmethod, numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">addHTML(selector, html, [addmethod, numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.addHTML(selector, html, [addmethod, numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds or sets the HTML content of an element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to add HTML to. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>html</strong> (<em>string</em>) – The HTML you want to add.</p></li>
+<li><p><strong>addmethod</strong> (<em>string</em>) – How you want to add the HTML. If left out, it will over write any pre-existing HTML content. If set to <code class="docutils literal notranslate"><span class="pre">add</span></code>, it will add to pre-existing  HTML content if any. <a class="reference external" href="examples/addhtml-03.html">Example-1</a>.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>. This method supports the <code class="docutils literal notranslate"><span class="pre">all</span></code> property. <a class="reference external" href="examples/addhtml-02.html">Here-1</a> is an example of <code class="docutils literal notranslate"><span class="pre">AddHTML</span></code> using the <code class="docutils literal notranslate"><span class="pre">all</span></code> property.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">addHTML</span><span class="p">(</span><span class="s2">&quot;#demo&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;p&gt;simply add any HTML &lt;ins&gt;anywhere&lt;/ins&gt; in the page.&lt;/p&gt;&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/addhtml-01.html">try-in-editor-1</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="addcss">
+<span id="id2"></span><h3>AddCSS<a class="headerlink" href="#addcss" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.addCSS(selector, css, [addmethod, numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">addCSS(selector, css, [addmethod, numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.addCSS(selector, css, [addmethod, numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds or sets the inline CSS of an element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to add CSS to. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>css</strong> (<em>string</em>) – The CSS you want to add.</p></li>
+<li><p><strong>addmethod</strong> (<em>string</em>) – How you want to add the CSS. If left out, it will over write any pre-existing inline CSS styles. If set to <code class="docutils literal notranslate"><span class="pre">keep</span></code>, it will add to pre-existing  CSS styles if any. <a class="reference external" href="examples/addCSS-02.html">Example</a>.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>. This method supports the <code class="docutils literal notranslate"><span class="pre">all</span></code> property. <a class="reference external" href="examples/addCSS-03.html">Here</a> is an example of AddCSS using the <code class="docutils literal notranslate"><span class="pre">all</span></code> property.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<blockquote>
+<div><p>AddCSS will take first priority* over all other CSS styles; unless used with <code class="docutils literal notranslate"><span class="pre">keep</span></code> then it will take second priority and inline CSS first priority.</p>
+</div></blockquote>
+<p>* By priority we mean how CSS styles will overwrite each other.</p>
+</div>
+<div class="section" id="id4">
+<h4>Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">addCSS</span><span class="p">(</span><span class="s2">&quot;#demo&quot;</span><span class="p">,</span> <span class="s2">&quot;\</span>
+<span class="s2">background-color: red;\</span>
+<span class="s2">border: 2px solid #555;\</span>
+<span class="s2">height: 6rem;\</span>
+<span class="s2">width: 6rem;\</span>
+<span class="s2">&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="or">
+<h4>OR<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">addCSS</span><span class="p">(</span><span class="s2">&quot;#demo&quot;</span><span class="p">,</span> <span class="s2">&quot;background-color: red; border: 2px solid #555;&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/addcss-01.html">try-in-editor-2</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="addclass">
+<span id="id5"></span><h3>AddClass<a class="headerlink" href="#addclass" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.addClass(selector, class, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">addClass(selector, class, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.addClass(selector, class, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds one or more CSS class to an HTML element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to add the (CSS) class(es) to. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>class</strong> (<em>string</em>) – The CSS class(es) you want to add.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="id6">
+<h4>Example<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;#demo&quot;</span><span class="p">,</span> <span class="s2">&quot;new&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/addclass-01.html">try-in-editor-3</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="changecss">
+<span id="id7"></span><h3>ChangeCSS<a class="headerlink" href="#changecss" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.changeCSS(selector, property, value, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">changeCSS(selector, property, value, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.changeCSS(selector, property, value, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets or changes a single CSS style property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element whos style you want to change. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>property</strong> (<em>string</em>) – The name of the property  you want to change (only the name e.g. for <code class="docutils literal notranslate"><span class="pre">color:red;</span></code> place only <code class="docutils literal notranslate"><span class="pre">color</span></code> here: see example below).</p></li>
+<li><p><strong>value</strong> (<em>string</em>) – The value you want to set the CSS property to (e.g. for <code class="docutils literal notranslate"><span class="pre">color:red;</span></code> you would place <code class="docutils literal notranslate"><span class="pre">red</span></code> here: see example below).</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>. This method supports the <code class="docutils literal notranslate"><span class="pre">all</span></code> property. <a class="reference external" href="examples/changeCSS-02.html">Here-3</a> is an example of changeCSS using the <code class="docutils literal notranslate"><span class="pre">all</span></code> property.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="id8">
+<h4>Example<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">changeCSS</span><span class="p">(</span><span class="s2">&quot;#demo&quot;</span><span class="p">,</span> <span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/changeCSS-01.html">try-in-editor-4</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="removeelement">
+<span id="id9"></span><h3>RemoveElement<a class="headerlink" href="#removeelement" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.RemoveElement(selector, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">RemoveElement(selector, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.RemoveElement(selector, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes one or more HTML elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to remove/delete. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>. This method supports the <code class="docutils literal notranslate"><span class="pre">all</span></code> property. <a class="reference external" href="examples/RemoveElement-02.html">Here-4</a> is an example of removeElement using the <code class="docutils literal notranslate"><span class="pre">all</span></code> property.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="id10">
+<h4>Example<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">removeElement</span><span class="p">(</span><span class="s2">&quot;.demo&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/RemoveElement-01.html">try-in-editor-5</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="setproperty">
+<span id="id11"></span><h3>SetProperty<a class="headerlink" href="#setproperty" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.setProperty(selector, property, value, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">setProperty(selector, property, value, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.setProperty(selector, property, value, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets or changes a single property of an element (e.g. for an <code class="docutils literal notranslate"><span class="pre">a</span></code> tag, a property you might set/change could be <code class="docutils literal notranslate"><span class="pre">href</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element who’s property you want to change. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>property</strong> (<em>string</em>) – The name of the property  you want to change (only the name e.g. for <code class="docutils literal notranslate"><span class="pre">href=&quot;somewhere.html&quot;;</span></code> place only <code class="docutils literal notranslate"><span class="pre">href</span></code> here: <a class="reference external" href="examples/setProperty-02.html">see-example</a>).</p></li>
+<li><p><strong>value</strong> (<em>string</em>) – The value you want to set the property to (e.g. for <code class="docutils literal notranslate"><span class="pre">href=&quot;somewhere.html&quot;;</span></code> you would place <code class="docutils literal notranslate"><span class="pre">somewhere.html</span></code> here: <a class="reference external" href="examples/setProperty-02.html">see-example</a>  below).</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SetProperty method is not suggested for setting style or class properties. For this use <a class="reference internal" href="#addcss"><span class="std std-ref">AddCSS</span></a> (or <a class="reference internal" href="#changecss"><span class="std std-ref">ChangeCSS</span></a>) and <a class="reference internal" href="#addclass"><span class="std std-ref">AddClass</span></a>.</p>
+</div>
+<div class="section" id="id12">
+<h4>Example<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="s2">&quot;#demo&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;range&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/setProperty-01.html">try-in-editor-12</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="addelement">
+<span id="id13"></span><h3>AddElement<a class="headerlink" href="#addelement" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.addElement(element, selector, special-name, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">addElement(element, selector, special-name, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.addElement(element, selector, special-name, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and appends an HTML element into your HTML document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>element</strong> (<em>string</em>) – The element you want to create.</p></li>
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to append the created element to. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>special-name</strong> (<em>string</em>) – This is a special name given to the element maker, as a way of identifying it when adding Id, class, and other properties with the <code class="docutils literal notranslate"><span class="pre">$gElem.</span></code> (NOT to be used outside of this method) This name is not shown.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="syntax">
+<h4>syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">addElement</span><span class="p">(</span><span class="s2">&quot;_Element_&quot;</span><span class="p">,</span> <span class="s2">&quot;_Selector_&quot;</span><span class="p">,</span> <span class="s2">&quot;_special-name_&quot;</span><span class="p">);</span>
+
+<span class="c1">// This is if you want to add a Id and/or class</span>
+<span class="nx">$gElem</span><span class="p">.</span><span class="nx">_special</span><span class="o">-</span><span class="nx">name_</span><span class="p">(</span><span class="s2">&quot;_Id_&quot;</span><span class="p">,</span> <span class="s2">&quot;_class(es)_&quot;</span><span class="p">);</span>
+
+<span class="c1">// This is if you want to add any other properties</span>
+<span class="c1">// You can use this several times if desired</span>
+<span class="nx">$gElem</span><span class="p">.</span><span class="nx">_special</span><span class="o">-</span><span class="nx">name_</span><span class="p">.</span><span class="nx">custom</span><span class="p">(</span><span class="s2">&quot;_property_&quot;</span><span class="p">,</span> <span class="s2">&quot;_value_&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h4>Example<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">addElement</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;body&quot;</span><span class="p">,</span> <span class="s2">&quot;new&quot;</span><span class="p">);</span>
+<span class="nx">$gElem</span><span class="p">.</span><span class="k">new</span><span class="p">(</span><span class="s2">&quot;myId&quot;</span><span class="p">,</span> <span class="s2">&quot;myClass&quot;</span><span class="p">);</span>
+<span class="nx">$gElem</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">custom</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">);</span>
+<span class="nx">$gElem</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">custom</span><span class="p">(</span><span class="s2">&quot;placeholder&quot;</span><span class="p">,</span> <span class="s2">&quot;A new element!!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/addElement-01.html">try-in-editor-14</a></p>
+<blockquote>
+<div></div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though the addElement method works well, it is still in development, as we hope to improve it in upcoming versions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="event-methods">
+<span id="event-method"></span><h2>Event Methods<a class="headerlink" href="#event-methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="when">
+<span id="id15"></span><h3>When<a class="headerlink" href="#when" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.when(selector, event, code, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">when(selector, event, code, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.when(selector, event, code, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs/executes your code “when” an event (e.g. an element is clicked) is triggered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element which will trigger the event. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>event</strong> (<em>string</em>) – The event that will trigger your code. You can use any single JavaScript event here. This is a list of accepted <a class="reference internal" href="othercomponents.html#javascript-events"><span class="std std-ref">JavaScript Events</span></a>.
+| <a class="reference external" href="examples/when-02.html">Here-is-a-example</a> of the some of the most used events.</p></li>
+<li><p><strong>code</strong> (<em>string</em>) – The JavaScript code (gimel.js or other) you wish to run when triggered.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="id16">
+<h4>syntax<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;_Selector_&quot;</span><span class="p">,</span> <span class="s2">&quot;_Event_&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="c1">// Code to run when triggered</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id17">
+<h4>Example<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">,</span> <span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="nx">$g</span><span class="p">.</span><span class="nx">addHTML</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;h3&gt;See how it works!&lt;/h3&gt;&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/when-01.html">try-in-editor-8</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="whenscrollto">
+<span id="id18"></span><h3>WhenScrollTo<a class="headerlink" href="#whenscrollto" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.whenScrollTo(selector, code, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">whenScrollTo(selector, code, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.whenScrollTo(selector, code, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs/executes your code “when” the HTML page is scrolled to the selected element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element which will, on reaching trigger your code. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>code</strong> (<em>string</em>) – The JavaScript code (gimel.js or other) you wish to run when triggered.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="id19">
+<h4>syntax<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">whenScrollTo</span><span class="p">(</span><span class="s2">&quot;_Selector_&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="c1">// Code to run when page is scrolled to selected element</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id20">
+<h4>Example<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">whenScrollTo</span><span class="p">(</span><span class="s2">&quot;#demo&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="nx">$g</span><span class="p">.</span><span class="nx">changeCSS</span><span class="p">(</span><span class="s2">&quot;#demo&quot;</span> <span class="p">,</span> <span class="s2">&quot;background-color&quot;</span> <span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/whenScrollTo-01.html">try-in-editor-9</a></p>
+<blockquote>
+<div></div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method (whenScrollTo) may not preform as expected on all devices. We are working to fix this.</p>
+</div>
+</div>
+</div>
+<div class="section" id="whentimeup">
+<span id="id21"></span><h3>WhenTimeUp<a class="headerlink" href="#whentimeup" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.whenTimeUp(time, code, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">whenTimeUp(time, code, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.whenTimeUp(time, code, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs/executes your code “when” time is up.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>integer</em>) – The amount of time before the code is to be executed (time is in milliseconds: one second is equally to one hundred milliseconds). <a class="reference external" href="examples/whenTimeUp-02.html">This-example</a> of the <code class="docutils literal notranslate"><span class="pre">whenTimeUp</span></code> method shows the the use of timing.</p></li>
+<li><p><strong>code</strong> (<em>string</em>) – The JavaScript code (gimel.js or other) you wish to run when time is up.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="id22">
+<h4>syntax<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">whenTimeUp</span><span class="p">(</span> <span class="nx">time</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="c1">// Code to run when time is up</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id23">
+<h4>Example<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">whenTimeUp</span><span class="p">(</span> <span class="mi">3000</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="nx">$g</span><span class="p">.</span><span class="nx">changeCSS</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="s2">&quot;font-size&quot;</span><span class="p">,</span> <span class="s2">&quot;24px&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/whenTimeUp-01.html">try-in-editor-10</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="whentoggle">
+<span id="id24"></span><h3>WhenToggle<a class="headerlink" href="#whentoggle" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.whenToggle(selector, first-code, second-code, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">whenToggle(selector, first-code, second-code, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.whenToggle(selector, first-code, second-code, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs/executes your code “when” the selected element is toggled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element which will toggle between the to sets of code. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>first-code</strong> (<em>string</em>) – The JavaScript code (gimel.js or other) you wish to run when first toggled.</p></li>
+<li><p><strong>second-code</strong> (<em>string</em>) – The JavaScript code (gimel.js or other) you wish to run when  toggled for the second time.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="id25">
+<h4>syntax<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">whenToggle</span><span class="p">(</span> <span class="s2">&quot;_Selector_&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="c1">// Code to run when first triggered</span>
+<span class="p">},</span>
+<span class="kd">function</span><span class="p">(){</span>
+<span class="c1">// Code to run when triggered a second time</span>
+<span class="c1">// Then it starts over</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id26">
+<h4>Example<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">whenToggle</span><span class="p">(</span> <span class="s2">&quot;#demo&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="nx">$g</span><span class="p">.</span><span class="nx">changeCSS</span><span class="p">(</span><span class="s2">&quot; #demo&quot;</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">);</span>
+<span class="p">},</span>
+<span class="kd">function</span><span class="p">(){</span>
+<span class="nx">$g</span><span class="p">.</span><span class="nx">changeCSS</span><span class="p">(</span><span class="s2">&quot; #demo&quot;</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/whenToggle-01.html">try-in-editor-11</a></p>
+<blockquote>
+<div></div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<blockquote>
+<div><p>The element being toggled dose not have to be the element on which the code applies. <a class="reference external" href="examples/whenToggle-02.html">An-Example</a></p>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="effect-methods">
+<h2>Effect Methods<a class="headerlink" href="#effect-methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="typingeffect">
+<span id="id27"></span><h3>TypingEffect<a class="headerlink" href="#typingeffect" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.typingEffect(selector, html, time, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">typingEffect(selector, html, time, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.typingEffect(selector, html, time, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a typing effect to the text of an element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to add the typing effect to. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>html</strong> (<em>string</em>) – The text you want to type.</p></li>
+<li><p><strong>time</strong> (<em>string</em>) – How fast you want the text to be type. <a class="reference external" href="examples/typingEffect-02.html">Here-is-an-example-showing-this</a>.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="id28">
+<h4>Example<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// Time in milliseconds</span>
+<span class="nx">$g</span><span class="p">.</span><span class="nx">typingEffect</span><span class="p">(</span><span class="s2">&quot;#demo&quot;</span><span class="p">,</span> <span class="s2">&quot;Simple, Easy, Neat and most importantly FUN!&quot;</span><span class="p">,</span> <span class="mi">170</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/typingEffect-01.html">try-in-editor-13</a></p>
+<blockquote>
+<div></div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<blockquote>
+<div><p>Do not use  HTML as typing content, it will not render; as seen in <a class="reference external" href="examples/typingEffect-03.html">this-example.</a> You can still style text, just style the element you are typing the text in; <a class="reference external" href="examples/typingEffect-04.html">like-this</a>.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="fadein">
+<span id="id30"></span><h3>FadeIn<a class="headerlink" href="#fadein" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.fadeIn(selector, effect-name, effect-value, [clarity, numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">fadeIn(selector, effect-name, effect-value, [clarity, numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.fadeIn(selector, effect-name, effect-value, [clarity, numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fades in a HTML element using a CSS transform effect.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to fade in. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>effect-name</strong> (<em>string</em>) – The name (only the name) of the CSS transform effect you want to use for your fade in. Here is a list of the <a class="reference internal" href="othercomponents.html#css-transforms"><span class="std std-ref">CSS transform</span></a>.</p></li>
+<li><p><strong>effect-value</strong> (<em>string</em>) – The value of the CSS transform effect (e.g. if you wanted <code class="docutils literal notranslate"><span class="pre">translate(60px,</span> <span class="pre">0px)</span></code> as your fade in the effect value would be <code class="docutils literal notranslate"><span class="pre">(60px,</span> <span class="pre">0px)</span></code> ). Here is a list of the <a class="reference internal" href="othercomponents.html#css-transforms"><span class="std std-ref">CSS transform</span></a>.</p></li>
+<li><p><strong>clarity</strong> (<em>string</em>) – Whether you want your fade in to literally fade in (<a class="reference external" href="examples/fadein-04.html">like-this-clear</a>), or whether you want a solid face in (<a class="reference external" href="examples/fadein-05.html">like-this-solid</a>). The solid face in is for things like off canvas drawers. Clear is the default if left out; for the solid effect set to <code class="docutils literal notranslate"><span class="pre">off</span></code> as seen in the solid example.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<div class="line-block">
+<div class="line">The fadeIn method must.</div>
+<div class="line">1. Be called outside one of any <a class="reference internal" href="#event-method"><span class="std std-ref">Event Methods</span></a>.</div>
+<div class="line">2. Must be used with the <a class="reference internal" href="#fadeinstart"><span class="std std-ref">FadeInStart</span></a> method.</div>
+<div class="line">You can think of the fadeIn method as setting up the fade in and the fadeInStart method as calling the fadeIn to begin.  It is for this reason that the <code class="docutils literal notranslate"><span class="pre">fadeIn</span></code> method is always at the top in our examples.</div>
+</div>
+</div>
+<div class="section" id="id31">
+<h4>Example<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">(</span><span class="s2">&quot;#divOne&quot;</span><span class="p">,</span> <span class="s2">&quot;translate3d&quot;</span><span class="p">,</span> <span class="s2">&quot;(1rem, -4rem, 3rem)&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/fadein-01.html">try-in-editor-6</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="fadeinstart">
+<span id="id32"></span><h3>FadeInStart<a class="headerlink" href="#fadeinstart" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.fadeInStart(selector, effect-name, length, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">fadeInStart(selector, effect-name, length, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.fadeInStart(selector, effect-name, length, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls the <code class="docutils literal notranslate"><span class="pre">fadeIn</span></code> method to begin the fade in. This method (fadeInStart) is always placed inside an event method (See <a class="reference internal" href="#event-method"><span class="std std-ref">Event Methods</span></a> and example below).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to add HTML to. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>effect-name</strong> (<em>string</em>) – The name (only the name) of the CSS transform effect you used in the <code class="docutils literal notranslate"><span class="pre">fadeIn</span></code> method for the selected element.</p></li>
+<li><p><strong>length</strong> (<em>string</em>) – The length of time (in seconds) that you want the fade in to last.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<div class="line-block">
+<div class="line">The fadeIn Start method must.</div>
+<div class="line">1. Be called inside one of the <a class="reference internal" href="#event-method"><span class="std std-ref">Event Methods</span></a>.</div>
+<div class="line">2. Must be used with the <a class="reference internal" href="#fadein"><span class="std std-ref">FadeIn</span></a> method.</div>
+<div class="line">You can think of the fadeIn method as setting up the fade in and the fadeInStart method as calling the fadeIn to begin. It is for this reason that the fadeIn method is always at the top in our examples.</div>
+</div>
+</div>
+<div class="section" id="id33">
+<h4>Example<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">fadeInStart</span><span class="p">(</span><span class="s2">&quot;#divOne&quot;</span><span class="p">,</span> <span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/fadeInStart-01.html">try-in-editor-7</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="othercomponents.html" class="btn btn-neutral float-right" title="Number Selector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Correct Syntax, Noah Rahm and other contributers
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

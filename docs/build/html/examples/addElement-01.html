@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>Gimel.js Test  Editor</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="dist/trystyle.css" />
+		<script src="dist/tryScript.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="textareacontainer">
+				<div class="textarea">
+					<div style="overflow:auto;">
+						<div class="headerText">Edit This Code:</div>
+						<button class="seeResult" type="button" onclick="submitTryit()">See Result »</button>
+					</div>
+					<div class="textareawrapper">
+<textarea autocomplete="off" class="code_input" id="textareaCode" wrap="logical" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<head>
+<title>A Gimel.js Example</title>
+</head>
+<body>
+<style>
+#myId {
+border: 2px solid #666;
+}
+.myClass {
+font-size: 20px;
+padding: 2px 2px 2px 2px;
+}
+</style>
+<p>An example of the "addElement" method.
+
+
+
+<script src="gimel.js"></script>
+<script>
+
+$g.addElement("input", "body", "new");
+$gElem.new("myId", "myClass");
+$gElem.new.custom("type", "text");
+$gElem.new.custom("placeholder", "A new element!!");
+
+</script>
+</body>
+</html>
+</textarea>
+						<form autocomplete="off" style="margin:0px;display:none;">
+							<input type="hidden" name="code" id="code" />
+							<input type="hidden" id="bt" name="bt" />
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="iframecontainer">
+				<div class="iframe">
+					<div style="overflow:auto;">
+						<div class="headerText">Result:</div>
+					</div>
+					<div id="iframewrapper" class="iframewrapper"></div>
+				</div>
+			</div>
+			<div class="footerText">Try it Yourself</div>
+		</div>
+		<script>submitTryit()</script>
+	</body>
+</html>

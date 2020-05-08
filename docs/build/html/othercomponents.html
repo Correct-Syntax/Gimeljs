@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Number Selector &mdash; Gimel.js 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Gimel.js API Reference" href="api_reference.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Gimel.js
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">Gimel.js API Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Number Selector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-number-selector">What is Number Selector?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-one">Example one</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-two">Example two</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-all-keyword">Using the all keyword</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#css-transform">CSS transform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#d-transforms">2D transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3D transforms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#javascript-events">JavaScript Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main">Main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other">Other</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Gimel.js</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Number Selector</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/othercomponents.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="number-selector">
+<span id="id1"></span><h1>Number Selector<a class="headerlink" href="#number-selector" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-number-selector">
+<h2>What is Number Selector?<a class="headerlink" href="#what-is-number-selector" title="Permalink to this headline">¶</a></h2>
+<p>The number selector is how gimel.js determines which element to select when the selector used (e.g. a class that is on more then one element) will return more then one element.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You do not need use Number Selector when selecting elements by Id, as there will never be two elements with the same Id.</p>
+</div>
+<div class="section" id="example-one">
+<h3>Example one<a class="headerlink" href="#example-one" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;gimel.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+
+ <span class="nx">$g</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="s2">&quot;newClass&quot;</span><span class="p">);</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Let’s say that you want to add the class “newClass” to the second div tag. If you were to run the above example it would add the class to only the first div tag (that’s because gimel.js automatically selects the first element if there is no number selector), now in order to add the class to the second div tag we need to use the number selector property (below).</p>
+</div>
+<div class="section" id="example-two">
+<h3>Example two<a class="headerlink" href="#example-two" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;gimel.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+
+ <span class="nx">$g</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="s2">&quot;newClass&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Now it will select the second div tag.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Number Selector is an integer, meaning it starts counting at 0, not 1.</p>
+</div>
+</div>
+</div>
+<div class="section" id="using-the-all-keyword">
+<h2>Using the all keyword<a class="headerlink" href="#using-the-all-keyword" title="Permalink to this headline">¶</a></h2>
+<p>Now using the example above, what if we wanted to add the “newClass” class to all the div tags? Well that’s what the <code class="docutils literal notranslate"><span class="pre">all</span></code> property is for.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;gimel.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+
+ <span class="nx">$g</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="s2">&quot;newClass&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">);</span>
+
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all gimel.js methods support the all keyword. To find out if a method supports the all keyword check under the method’s  “Numberselector” property  in the Gimel.js API Reference.</p>
+</div>
+</div>
+</div>
+<div class="section" id="css-transform">
+<span id="css-transforms"></span><h1>CSS transform<a class="headerlink" href="#css-transform" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="d-transforms">
+<h2>2D transforms<a class="headerlink" href="#d-transforms" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt><cite>matrix(n,n,n,n,n,n)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 2D transformation, using a matrix of six values.</div>
+</div>
+</dd>
+<dt><cite>translate(x,y)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 2D translation, moving the element along the X- and the Y-axis.</div>
+</div>
+</dd>
+<dt><cite>translateX(n)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 2D translation, moving the element along the X-axis.</div>
+</div>
+</dd>
+<dt><cite>translateY(n)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 2D translation, moving the element along the Y-axis.</div>
+</div>
+</dd>
+<dt><cite>scale(x,y)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 2D scale transformation, changing the elements width and height.</div>
+</div>
+</dd>
+<dt><cite>scaleX(n)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 2D scale transformation, changing the element’s width.</div>
+</div>
+</dd>
+<dt><cite>scaleY(n)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 2D scale transformation, changing the element’s height.</div>
+</div>
+</dd>
+<dt><cite>rotate(angle)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 2D rotation, the angle is specified in the parameter.</div>
+</div>
+</dd>
+<dt><cite>skew(x-angle,y-angle)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 2D skew transformation along the X- and the Y-axis.</div>
+</div>
+</dd>
+<dt><cite>skewX(angle)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 2D skew transformation along the X-axis.</div>
+</div>
+</dd>
+<dt><cite>skewY(angle)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 2D skew transformation along the Y-axis.</div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>3D transforms<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt><cite>matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D transformation, using a 4x4 matrix of 16 values.</div>
+</div>
+</dd>
+<dt><cite>translate3d(x,y,z)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D translation.</div>
+</div>
+</dd>
+<dt><cite>translateX(x)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D translation, using only the value for the X-axis.</div>
+</div>
+</dd>
+<dt><cite>translateY(y)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D translation, using only the value for the Y-axis.</div>
+</div>
+</dd>
+<dt><cite>translateZ(z)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D translation, using only the value for the Z-axis.</div>
+</div>
+</dd>
+<dt><cite>scale3d(x,y,z)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D scale transformation.</div>
+</div>
+</dd>
+<dt><cite>scaleX(x)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D scale transformation by giving a value for the X-axis.</div>
+</div>
+</dd>
+<dt><cite>scaleY(y)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D scale transformation by giving a value for the Y-axis.</div>
+</div>
+</dd>
+<dt><cite>scaleZ(z)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D scale transformation by giving a value for the Z-axis.</div>
+</div>
+</dd>
+<dt><cite>rotate3d(x,y,z,angle)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D rotation.</div>
+</div>
+</dd>
+<dt><cite>rotateX(angle)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D rotation along the X-axis.</div>
+</div>
+</dd>
+<dt><cite>rotateY(angle)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D rotation along the Y-axis.</div>
+</div>
+</dd>
+<dt><cite>rotateZ(angle)</cite></dt><dd><div class="line-block">
+<div class="line">Defines a 3D rotation along the Z-axis.</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="javascript-events">
+<span id="id3"></span><h1>JavaScript Events<a class="headerlink" href="#javascript-events" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="main">
+<h2>Main<a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is not a full list, but is some of the most used ones.</p>
+</div>
+<dl>
+<dt><cite>click</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when the user clicks on an element</div>
+</div>
+</dd>
+<dt><cite>dblclick</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when the user double-clicks on an element</div>
+</div>
+</dd>
+<dt><cite>resize</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when the document view is resized</div>
+</div>
+</dd>
+<dt><cite>focus</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when an element gets focus</div>
+</div>
+</dd>
+<dt><cite>submit</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when a form is submitted</div>
+</div>
+</dd>
+<dt><cite>keydown</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when the user is pressing a key</div>
+</div>
+</dd>
+<dt><cite>keypress</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when the user presses a key</div>
+</div>
+</dd>
+<dt><cite>keyup</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when the user releases a key</div>
+</div>
+</dd>
+<dt><cite>change</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when the content of a form element, the selection, or the checked state have changed (for &lt;input&gt;, &lt;select&gt;, and &lt;textarea&gt;)</div>
+</div>
+</dd>
+<dt><cite>scroll</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when an element’s scrollbar is being scrolled</div>
+</div>
+</dd>
+<dt><cite>mouseover</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when the pointer is moved onto an element, or onto one of its children</div>
+</div>
+</dd>
+<dt><cite>mouseout</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when a user moves the mouse pointer out of an element, or out of one of its children</div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="other">
+<h2>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt><cite>touchstart</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when a finger is placed on a touch screen</div>
+</div>
+</dd>
+<dt><cite>touchend</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when a finger is removed from a touch screen</div>
+</div>
+</dd>
+<dt><cite>mouseenter</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when the pointer is moved onto an element</div>
+</div>
+</dd>
+<dt><cite>mouseleave</cite></dt><dd><div class="line-block">
+<div class="line">The event occurs when the pointer is moved out of an element</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="api_reference.html" class="btn btn-neutral float-left" title="Gimel.js API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Correct Syntax, Noah Rahm and other contributers
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

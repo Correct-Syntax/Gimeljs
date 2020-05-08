@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>Gimel.js Test  Editor</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="dist/trystyle.css" />
+		<script src="dist/tryScript.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="textareacontainer">
+				<div class="textarea">
+					<div style="overflow:auto;">
+						<div class="headerText">Edit This Code:</div>
+						<button class="seeResult" type="button" onclick="submitTryit()">See Result »</button>
+					</div>
+					<div class="textareawrapper">
+<textarea autocomplete="off" class="code_input" id="textareaCode" wrap="logical" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<head>
+<title>A Gimel.js Example</title>
+</head>
+<body>
+<style>
+#divOne{
+background-color: #555;
+height: 6rem;
+width: 6rem;
+}
+</style>
+<p>An  example of the "fadeInStart" method ("fadeInStart" method is always used with "fadeIn" method).</p>
+
+
+<div id="divOne"></div>
+<button>Click here</button>
+
+<script src="gimel.js"></script>
+<script>
+
+$g.fadeIn("#divOne", "translate", "(4rem, 4rem)");
+
+
+
+$g.when("button", "click", function(){
+$g.fadeInStart("#divOne", "translate", 2);
+});
+
+</script>
+
+</body>
+</html>
+</textarea>
+						<form autocomplete="off" style="margin:0px;display:none;">
+							<input type="hidden" name="code" id="code" />
+							<input type="hidden" id="bt" name="bt" />
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="iframecontainer">
+				<div class="iframe">
+					<div style="overflow:auto;">
+						<div class="headerText">Result:</div>
+					</div>
+					<div id="iframewrapper" class="iframewrapper"></div>
+				</div>
+			</div>
+			<div class="footerText">Try it Yourself</div>
+		</div>
+		<script>submitTryit()</script>
+	</body>
+</html>

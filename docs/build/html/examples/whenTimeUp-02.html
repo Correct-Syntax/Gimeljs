@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>Gimel.js Test  Editor</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="dist/trystyle.css" />
+		<script src="dist/tryScript.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="textareacontainer">
+				<div class="textarea">
+					<div style="overflow:auto;">
+						<div class="headerText">Edit This Code:</div>
+						<button class="seeResult" type="button" onclick="submitTryit()">See Result »</button>
+					</div>
+					<div class="textareawrapper">
+<textarea autocomplete="off" class="code_input" id="textareaCode" wrap="logical" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<head>
+<title>A Gimel.js Example</title>
+</head>
+<body>
+<p>Use the "whenTimeUp" method with the "when" method to do something __time after the event</p>
+<p>_</p>
+<br>
+<button>Click here</button>
+
+
+<script src="gimel.js"></script>
+<script>
+$g.when("button", "click", function(){
+
+// change text in 1 second after the button is clicked
+$g.whenTimeUp( 1000, function(){
+$g.addHTML("p", "<h4>One second had passed.</h4>", 1);
+});
+
+// change text in 2 second after the button is clicked
+$g.whenTimeUp( 2000, function(){
+$g.addHTML("p", "<h3>Two seconds had passed.</h3>", 1);
+});
+
+// change text in 3 second after the button is clicked
+$g.whenTimeUp( 3000, function(){
+$g.addHTML("p", "<h2>Time is up!</h2>", 1);
+});
+
+
+});
+
+</script>
+</body>
+</html>
+</textarea>
+						<form autocomplete="off" style="margin:0px;display:none;">
+							<input type="hidden" name="code" id="code" />
+							<input type="hidden" id="bt" name="bt" />
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="iframecontainer">
+				<div class="iframe">
+					<div style="overflow:auto;">
+						<div class="headerText">Result:</div>
+					</div>
+					<div id="iframewrapper" class="iframewrapper"></div>
+				</div>
+			</div>
+			<div class="footerText">Try it Yourself</div>
+		</div>
+		<script>submitTryit()</script>
+	</body>
+</html>
