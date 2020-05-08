@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------
- * Gimel.js v0.9.0 (C) 2020 [Correct Syntax] Noah Rahm and other contributers
- * Licensed under BSD 3 Clause
+ * Gimel.js v1.0.1 (C) 2020 Noah Rahm, Correct Syntax & other contributers
+ * Licensed under BSD 3-Clause
  * --------------------------------------------------------------------------
  */
 
@@ -37,7 +37,7 @@ var $g = {
     addCSS : function(a, b, c, d) {
         for (i=0; i < document.querySelectorAll(a).length; i++) {
              var num = (c === "keep") ? d : c;
-        if(num === "all"){
+        if(num === "all") {
                var val = (c === "keep") ? document.querySelectorAll(a)[i].getAttribute("style") : " ";
                 document.querySelectorAll(a)[i].setAttribute("style", b + val);
       } else {
@@ -70,16 +70,16 @@ var $g = {
     addElement : function(a, b, c, d) {
         var elem = document.createElement(a);
         document.querySelectorAll(b)[d||0].appendChild(elem);
-        $aEl = new Object(); 
+        $gElem = new Object(); 
 
-        $aEl[c] = function(d, e) {
+        $gElem[c] = function(d, e) {
             if (d !== 0) {
                 elem.setAttribute("id", d);
             }
             if (e !== 0) {
                 elem.setAttribute("class", e);
             }
-            $aEl[c].custom = function(f, g) {
+            $gElem[c].custom = function(f, g) {
                 elem.setAttribute(f, g);
             }
             return;
@@ -106,17 +106,6 @@ var $g = {
         document.querySelectorAll(a)[d||0].setAttribute(b, c);
         return;
     },
-
-    removeProperty : function(a, b, c, d) {
-        document.querySelectorAll(a)[d||0].removeAttribute(b, c);
-        return;
-    },
-
-    toggleClass : function(a, b) {
-        document.querySelectorAll(a)[0].classList.toggle(b);
-        return;
-    },
-
     when : function(a, b, c, d) {
         if (a === "window") {
             window.addEventListener(b, c);
@@ -131,6 +120,21 @@ var $g = {
         return;
     },
 
+    whenToggle : function(a, b, c, d) {
+    var elem = document.querySelectorAll(a)[d||0];
+    elem.addEventListener("click", function() {
+        var val = elem.getAttribute( "gJST");
+        if(val === "true"){
+            elem.setAttribute("gJST", "false" );
+            var tm = setTimeout(c, 1);
+        }else{
+            elem.setAttribute("gJST", "true" );
+            var tm = setTimeout(b, 1);
+        }
+    });
+    return;
+    },
+
     /**
      * ------------------------------------------------------------------------
      * Effects
@@ -140,22 +144,22 @@ var $g = {
     typingEffect : function(a, b, c, d) {
         document.querySelectorAll(a)[d||0].innerHTML = b.charAt(0);
         var count = 1;
-        setTimeout(_ajsType, c); 
-        function _ajsType() {
+        setTimeout(_gjsType, c); 
+        function _gjsType() {
             if (count < b.length) {
                 document.querySelectorAll(a)[d||0].innerHTML += b.charAt(count);
                 count++;
-                setTimeout(_ajsType, c); 
+                setTimeout(_gjsType, c); 
             }
         }
         return;
     },
     
     whenScrollTo : function(a, b, c) {
-        window.addEventListener("scroll", _ajsPoint);
-        var elem = document.querySelectorAll(a)[c||0].offsetTop + (window.innerHeight / 2);
+        window.addEventListener("scroll", _gjsPoint);
+        var elem = document.querySelectorAll(a)[c||0].offsetTop - (window.innerHeight / 2);
         var once = false;
-        function _ajsPoint() {
+        function _gjsPoint() {
             if (pageYOffset > elem && once === false) {
                 b();
                 once = true;
@@ -164,16 +168,20 @@ var $g = {
         return;
     },
 
-    fadeIn : function(a, b, c, d) {
-        var elem = document.querySelectorAll(a)[0];
+    fadeIn : function(a, b, c, d, e) {
+       var num = (d === "off") ? e : d;
+        var elem = document.querySelectorAll(a)[num||0];
         elem.style.transform = b + c;
-        elem.style.opacity = "0";
-
+        if (d === "off") {
+            elem.style.opacity = "1";
+        } else {
+            elem.style.opacity = "0";
+       }
         return;
     },
 
-    fadeInStart : function(a, b, c) {
-        var elem = document.querySelectorAll(a)[0];
+    fadeInStart : function(a, b, c, d) {
+        var elem = document.querySelectorAll(a)[d||0];
         elem.style.transition =  c + "s";
         if (b === "scale") {
             elem.style.transform = b + "(1,1)";
@@ -190,7 +198,7 @@ var $g = {
         } else if (b === "matrix") {
             elem.style.transform = b + "(1,0,0,1,0,0)";
         } else if (b === "matrix3d") {
-            console.log("matrix3d effect does not currently work");
+            console.log("Gimel.js WARNING: matrix3d effect does not currently work as intended. Check for a newer version on Gimel.js");
             elem.style.transform = b + "(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1)";
         } else if (b === "translate3d") {
             elem.style.transform = b + "(0,0,0)";
@@ -201,12 +209,17 @@ var $g = {
         return;
     },
         
-    fadeOutStart : function(a, b, c, d) {
-        var elem = document.querySelectorAll(a)[0];
+    fadeOutStart : function(a, b, c, d, e, f) {
+       var num = (e === "off") ? f : e;
+        var elem = document.querySelectorAll(a)[num||0];
         elem.style.transform = b + c;
         elem.style.transition =  d + "s";
-        elem.style.opacity = "0";
-        return;
+        if (e === "off") {
+            elem.style.opacity = "1";
+        } else {
+            elem.style.opacity = "0";
+        }
+       return;
     }
 
 };
