@@ -520,7 +520,7 @@ FadeIn
 
    :param string selector: CSS selector to select the element you want to fade in. Must be either an ``id``, ``class name`` or ``tag name``.
    :param string effect-name: The name (only the name) of the CSS transform effect you want to use for your fade in. Here is a list of the :ref:`CSS-transforms`.
-   :param string effect-value: The value of the CSS transform effect (e.g. if you wanted ``translate(60px, 0px)`` as your fade in the effect value would be ``(60px, 0px)`` ). Here is a list of the :ref:`CSS-transforms`.
+   :param string effect-value: The value of the CSS transform effect (e.g. if you wanted ``translate(60px, 0px)`` as your fade in, the effect value would be ``(60px, 0px)`` ). Here is a list of the :ref:`CSS-transforms`.
    :param string clarity: Whether you want your fade in to literally fade in (`like-this-clear`_), or whether you want a solid face in (`like-this-solid`_). The solid face in is for things like off canvas drawers. Clear is the default if left out; for the solid effect set to ``off`` as seen in the solid example.
    :param integer numberselector: See :ref:`Number-Selector`.
 
@@ -550,17 +550,16 @@ Example
    .. _try-in-editor-6: examples/fadein-01.html
 
 
-
 .. _fadeInStart:
 
 FadeInStart
------------
+------------
 
 .. js:method:: $g.fadeInStart(selector, effect-name, length, [numberselector]);
    
    Calls the ``fadeIn`` method to begin the fade in. This method (fadeInStart) is always placed inside an event method (See :ref:`Event-Method` and example below).
 
-   :param string selector: CSS selector to select the element you want to add HTML to. Must be either an ``id``, ``class name`` or ``tag name``.
+   :param string selector: CSS selector to select the element you want to fade in. Must be either an ``id``, ``class name`` or ``tag name``.
 
    :param string effect-name: The name (only the name) of the CSS transform effect you used in the ``fadeIn`` method for the selected element. 
    :param string length: The length of time (in seconds) that you want the fade in to last.
@@ -569,7 +568,7 @@ FadeInStart
 
 .. Important::
 
-    | The fadeIn Start method must.
+    | The fadeInStart method must.
     | 1. Be called inside one of the :ref:`Event-Method`. 
     | 2. Must be used with the :ref:`fadeIn` method.
     | You can think of the fadeIn method as setting up the fade in and the fadeInStart method as calling the fadeIn to begin. It is for this reason that the fadeIn method is always at the top in our examples.
@@ -587,7 +586,36 @@ Example
 
    .. _try-in-editor-7: examples/fadeInStart-01.html
 
+.. _fadeOutStart:
+
+fadeOutStart
+-------------
+
+.. js:method:: $g.fadeOutStart(selector, effect-name, effect-value, length, [numberselector]);
+   
+   Fades out an HTML element using a CSS transform effect.
+
+   :param string selector: CSS selector to select the element you want to fade out. Must be either an ``id``, ``class name`` or ``tag name``.
+   :param string effect-name: The name (only the name) of the CSS transform effect you used in the ``fadeOutStart`` method for the selected element. 
+   :param string effect-value: The value of the CSS transform effect (e.g. if you wanted ``translate(60px, 0px)`` as your fade out, the effect value would be ``(60px, 0px)`` ). Here is a list of the :ref:`CSS-transforms`.
+   :param string length: The length of time (in seconds) that you want the fade out to last.
+   :param integer numberselector: See :ref:`Number-Selector`. 
 
 
+.. Important::
+
+    | The fadeOutStart method must be called inside one of the :ref:`Event-Method`. 
+    | Unlike fadeIn and fadeInStart, fadeOutStart dose not need to be setup only called.
 
 
+Example
+^^^^^^^
+
+.. code-block:: js
+
+    $g.fadeOutStart("#divOne", "translate", "(0px, 50px)", 2);
+
+
+`try-in-editor-15`_
+
+   .. _try-in-editor-15: examples/fadeOutStart-01.html

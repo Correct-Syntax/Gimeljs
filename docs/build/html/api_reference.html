@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Gimel.js API Reference &mdash; Gimel.js 1.0.0 documentation</title>
+  <title>Gimel.js API Reference &mdash; Gimel.js 1.1.0 documentation</title>
   
 
   
@@ -151,6 +151,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#fadeinstart">FadeInStart</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id33">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fadeoutstart">fadeOutStart</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id35">Example</a></li>
 </ul>
 </li>
 </ul>
@@ -683,7 +687,7 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to fade in. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
 <li><p><strong>effect-name</strong> (<em>string</em>) – The name (only the name) of the CSS transform effect you want to use for your fade in. Here is a list of the <a class="reference internal" href="othercomponents.html#css-transforms"><span class="std std-ref">CSS transform</span></a>.</p></li>
-<li><p><strong>effect-value</strong> (<em>string</em>) – The value of the CSS transform effect (e.g. if you wanted <code class="docutils literal notranslate"><span class="pre">translate(60px,</span> <span class="pre">0px)</span></code> as your fade in the effect value would be <code class="docutils literal notranslate"><span class="pre">(60px,</span> <span class="pre">0px)</span></code> ). Here is a list of the <a class="reference internal" href="othercomponents.html#css-transforms"><span class="std std-ref">CSS transform</span></a>.</p></li>
+<li><p><strong>effect-value</strong> (<em>string</em>) – The value of the CSS transform effect (e.g. if you wanted <code class="docutils literal notranslate"><span class="pre">translate(60px,</span> <span class="pre">0px)</span></code> as your fade in, the effect value would be <code class="docutils literal notranslate"><span class="pre">(60px,</span> <span class="pre">0px)</span></code> ). Here is a list of the <a class="reference internal" href="othercomponents.html#css-transforms"><span class="std std-ref">CSS transform</span></a>.</p></li>
 <li><p><strong>clarity</strong> (<em>string</em>) – Whether you want your fade in to literally fade in (<a class="reference external" href="examples/fadein-04.html">like-this-clear</a>), or whether you want a solid face in (<a class="reference external" href="examples/fadein-05.html">like-this-solid</a>). The solid face in is for things like off canvas drawers. Clear is the default if left out; for the solid effect set to <code class="docutils literal notranslate"><span class="pre">off</span></code> as seen in the solid example.</p></li>
 <li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
 </ul>
@@ -719,7 +723,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to add HTML to. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to fade in. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
 <li><p><strong>effect-name</strong> (<em>string</em>) – The name (only the name) of the CSS transform effect you used in the <code class="docutils literal notranslate"><span class="pre">fadeIn</span></code> method for the selected element.</p></li>
 <li><p><strong>length</strong> (<em>string</em>) – The length of time (in seconds) that you want the fade in to last.</p></li>
 <li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
@@ -731,7 +735,7 @@
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <div class="line-block">
-<div class="line">The fadeIn Start method must.</div>
+<div class="line">The fadeInStart method must.</div>
 <div class="line">1. Be called inside one of the <a class="reference internal" href="#event-method"><span class="std std-ref">Event Methods</span></a>.</div>
 <div class="line">2. Must be used with the <a class="reference internal" href="#fadein"><span class="std std-ref">FadeIn</span></a> method.</div>
 <div class="line">You can think of the fadeIn method as setting up the fade in and the fadeInStart method as calling the fadeIn to begin. It is for this reason that the fadeIn method is always at the top in our examples.</div>
@@ -743,6 +747,42 @@
 </pre></div>
 </div>
 <p><a class="reference external" href="examples/fadeInStart-01.html">try-in-editor-7</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="fadeoutstart">
+<span id="id34"></span><h3>fadeOutStart<a class="headerlink" href="#fadeoutstart" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="_S_g.fadeOutStart(selector, effect-name, effect-value, length, [numberselector]);">
+<code class="sig-prename descclassname">$g.</code><code class="sig-name descname">fadeOutStart(selector, effect-name, effect-value, length, [numberselector]);</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_S_g.fadeOutStart(selector, effect-name, effect-value, length, [numberselector]);" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fades out an HTML element using a CSS transform effect.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>selector</strong> (<em>string</em>) – CSS selector to select the element you want to fade out. Must be either an <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">tag</span> <span class="pre">name</span></code>.</p></li>
+<li><p><strong>effect-name</strong> (<em>string</em>) – The name (only the name) of the CSS transform effect you used in the <code class="docutils literal notranslate"><span class="pre">fadeOutStart</span></code> method for the selected element.</p></li>
+<li><p><strong>effect-value</strong> (<em>string</em>) – The value of the CSS transform effect (e.g. if you wanted <code class="docutils literal notranslate"><span class="pre">translate(60px,</span> <span class="pre">0px)</span></code> as your fade out, the effect value would be <code class="docutils literal notranslate"><span class="pre">(60px,</span> <span class="pre">0px)</span></code> ). Here is a list of the <a class="reference internal" href="othercomponents.html#css-transforms"><span class="std std-ref">CSS transform</span></a>.</p></li>
+<li><p><strong>length</strong> (<em>string</em>) – The length of time (in seconds) that you want the fade out to last.</p></li>
+<li><p><strong>numberselector</strong> (<em>integer</em>) – See <a class="reference internal" href="othercomponents.html#number-selector"><span class="std std-ref">Number Selector</span></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<div class="line-block">
+<div class="line">The fadeOutStart method must be called inside one of the <a class="reference internal" href="#event-method"><span class="std std-ref">Event Methods</span></a>.</div>
+<div class="line">Unlike fadeIn and fadeInStart, fadeOutStart dose not need to be setup only called.</div>
+</div>
+</div>
+<div class="section" id="id35">
+<h4>Example<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$g</span><span class="p">.</span><span class="nx">fadeOutStart</span><span class="p">(</span><span class="s2">&quot;#divOne&quot;</span><span class="p">,</span> <span class="s2">&quot;translate&quot;</span><span class="p">,</span> <span class="s2">&quot;(0px, 50px)&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="examples/fadeOutStart-01.html">try-in-editor-15</a></p>
 <blockquote>
 <div></div></blockquote>
 </div>
