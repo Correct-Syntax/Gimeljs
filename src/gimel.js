@@ -1,11 +1,13 @@
 /**
  * --------------------------------------------------------------------------
- * Gimel.js v1.0.1 (C) 2020 Noah Rahm, Correct Syntax & other contributers
+ * Gimel.js v1.1.0 (C) 2020 Noah Rahm, Correct Syntax & other contributers
  * Licensed under BSD 3-Clause
  * --------------------------------------------------------------------------
  */
 
+// Change the "$g" to change the access point for gimel.js
 var $g = {
+
 
     /**
      * ------------------------------------------------------------------------
@@ -198,8 +200,7 @@ var $g = {
         } else if (b === "matrix") {
             elem.style.transform = b + "(1,0,0,1,0,0)";
         } else if (b === "matrix3d") {
-            console.log("Gimel.js WARNING: matrix3d effect does not currently work as intended. Check for a newer version on Gimel.js");
-            elem.style.transform = b + "(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1)";
+            elem.style.transform = b + "(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)";
         } else if (b === "translate3d") {
             elem.style.transform = b + "(0,0,0)";
         } else {
