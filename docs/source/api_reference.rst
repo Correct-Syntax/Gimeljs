@@ -116,23 +116,24 @@ Example
    .. _try-in-editor-3: examples/addclass-01.html
 
 
-.. _changeCss:
 
-ChangeCSS
+.. _setCss:
+
+SetCSS
 ---------
 
-.. js:method:: $g.changeCSS(selector, property, value, [numberselector]);
+.. js:method:: $g.setCSS(selector, property, value, [numberselector]);
    
-   Sets or changes a single CSS style property.
+   Sets or changes a single CSS style property of a element.
 
    :param string selector: CSS selector to select the element whos style you want to change. Must be either an ``id``, ``class name`` or ``tag name``.
    :param string property: The name of the property  you want to change (only the name e.g. for ``color:red;`` place only ``color`` here: see example below).
    :param string value: The value you want to set the CSS property to (e.g. for ``color:red;`` you would place ``red`` here: see example below).
-   :param integer numberselector: See :ref:`Number-Selector`. This method supports the ``all`` property. `Here-3`_ is an example of changeCSS using the ``all`` property.
+   :param integer numberselector: See :ref:`Number-Selector`. This method supports the ``all`` property. `Here-3`_ is an example of setCSS using the ``all`` property.
 
 
 
-   .. _Here-3: examples/changeCSS-02.html
+   .. _Here-3: examples/setCSS-02.html
    
 
 Example
@@ -140,14 +141,14 @@ Example
 
 .. code-block:: js
 
-    $g.changeCSS("#demo", "background-color", "green");
+    $g.setCSS("#demo", "background-color", "green");
 
 
 
 
 `try-in-editor-4`_
 
-   .. _try-in-editor-4: examples/changeCSS-01.html
+   .. _try-in-editor-4: examples/setCSS-01.html
 
 
 .. _removeelement:
@@ -201,7 +202,7 @@ SetProperty
 .. _see-example: examples/setProperty-02.html
    
 .. note::
-    SetProperty method is not suggested for setting style or class properties. For this use :ref:`addCSS` (or :ref:`changeCSS`) and :ref:`addClass`.
+    SetProperty method is not suggested for setting style or class properties. For this use :ref:`addCSS` (or :ref:`setCSS`) and :ref:`addClass`.
 
 Example
 ^^^^^^^
@@ -222,32 +223,14 @@ Example
 AddElement
 ------------
 
-.. js:method:: $g.addElement(element, selector, special-name, [numberselector]);
+.. js:method:: $g.addElement(element, selector, Id, [numberselector]);
    
    Creates and appends an HTML element into your HTML document.
 
    :param string element: The element you want to create.
    :param string selector: CSS selector to select the element you want to append the created element to. Must be either an ``id``, ``class name`` or ``tag name``.
-   :param string special-name: This is a special name given to the element maker, as a way of identifying it when adding Id, class, and other properties with the ``$gElem.`` (NOT to be used outside of this method) This name is not shown.
+   :param string Id: The ``Id`` of the created element.
    :param integer numberselector: See :ref:`Number-Selector`.
-
-
-   .. _Example-14: examples/addhtml-02.html
-   .. _Here-14: examples/addhtml-03.html
-
-syntax
-^^^^^^
-
-.. code-block:: js
-
-    $g.addElement("_Element_", "_Selector_", "_special-name_");
-
-    // This is if you want to add a Id and/or class
-    $gElem._special-name_("_Id_", "_class(es)_");
-
-    // This is if you want to add any other properties
-    // You can use this several times if desired
-    $gElem._special-name_.custom("_property_", "_value_");
 
 
 Example
@@ -255,20 +238,61 @@ Example
 
 .. code-block:: js
 
-    $g.addElement("input", "body", "new");
-    $gElem.new("myId", "myClass");
-    $gElem.new.custom("type", "text");
-    $gElem.new.custom("placeholder", "A new element!!");
+    $g.addElement("input", ".demo", "new");
 
 
 `try-in-editor-14`_
 
    .. _try-in-editor-14: examples/addElement-01.html
 
-.. note::
-    Though the addElement method works well, it is still in development, as we hope to improve it in upcoming versions.
+.. _hide:
+
+Hide
+------------
+
+.. js:method:: $g.hide(selector, [numberselector]);
+   
+   Hides an HTML element.
+
+   :param string selector: CSS selector to select the element you want to hide. Must be either an ``id``, ``class name`` or ``tag name``.
+   :param integer numberselector: See :ref:`Number-Selector`.
+
+Example
+^^^^^^^
+
+.. code-block:: js
+
+    $g.hide("#demo");
 
 
+`try-in-editor-16`_
+
+   .. _try-in-editor-16: examples/hide-01.html
+
+
+.. _show:
+
+Show
+------------
+
+.. js:method:: $g.show(selector, [numberselector]);
+   
+   Shows an HTML element that has been hidden with the ``hide`` method.
+
+   :param string selector: CSS selector to select the element you want to show. Must be either an ``id``, ``class name`` or ``tag name``.
+   :param integer numberselector: See :ref:`Number-Selector`.
+
+Example
+^^^^^^^
+
+.. code-block:: js
+
+    $g.show("#demo");
+
+
+`try-in-editor-17`_
+
+   .. _try-in-editor-17: examples/show-01.html
 
 
 .. _Event-Method:

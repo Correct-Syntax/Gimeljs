@@ -24,25 +24,27 @@
 </head>
 <body>
 <style>
-div{
-background-color: red;
-margin-bottom: 12px;
+#demo {
+background-color: #ddd;
 height: 6rem;
 width: 6rem;
 }
 </style>
-<p>Change any CSS property with the Gimel.js changeCSS method.</p>
+<p>Show an element that has been hidden with the hide method.</p>
 
-<div></div>
-<div></div>
+
+<div id="demo"></div>
+<button>Click Me</button>
 
 <script src="gimel.js"></script>
 <script>
+$g.hide( "#demo");
 
-$g.changeCSS("div", "background-color", "green", "all");
+$g.when( "button", "click" ,function(){
+$g.show( "#demo");
+});
 
 </script>
-
 </body>
 </html>
 </textarea>

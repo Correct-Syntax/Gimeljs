@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Gimel.js v1.1.0 (C) 2020 Noah Rahm, Correct Syntax & other contributers
+ * Gimel.js v1.1.5 (C) 2020 Noah Rahm, Correct Syntax & other contributers
  * Licensed under BSD 3-Clause
  * --------------------------------------------------------------------------
  */
@@ -16,7 +16,8 @@ var $g = {
      */
 
     addHTML : function(a, b, c, d) {
-        for (i=0; i < document.querySelectorAll(a).length; i++) {
+        var elem = document.querySelectorAll(a);
+        for (Gjs=0; Gjs< elem.length; Gjs++) {
             /**
              * var num
             1. If c equals "add" then it has an "add" property in the c position.
@@ -25,11 +26,11 @@ var $g = {
             */
             var num = (c === "add") ? d : c;
             if (num === "all") {
-               var val = (c === "add") ? document.querySelectorAll(a)[i||0].innerHTML : " ";
-                document.querySelectorAll(a)[i||0].innerHTML = val + " " + b;
+               var val = (c === "add") ? elem[Gjs||0].innerHTML : " ";
+                elem[i||0].innerHTML = val + " " + b;
             } else {
-               var val = (c === "add") ? document.querySelectorAll(a)[num||0].innerHTML : " ";
-                    document.querySelectorAll(a)[num||0].innerHTML = val +" " + b;
+               var val = (c === "add") ? elem[num||0].innerHTML : " ";
+                    elem[num||0].innerHTML = val +" " + b;
                     break;
             }
         }
@@ -37,26 +38,28 @@ var $g = {
     },
 
     addCSS : function(a, b, c, d) {
-        for (i=0; i < document.querySelectorAll(a).length; i++) {
+        var elem = document.querySelectorAll(a);
+        for (Gjs=0; Gjs< elem.length; Gjs++) {
              var num = (c === "keep") ? d : c;
         if(num === "all") {
-               var val = (c === "keep") ? document.querySelectorAll(a)[i].getAttribute("style") : " ";
-                document.querySelectorAll(a)[i].setAttribute("style", b + val);
+               var val = (c === "keep") ? elem[Gjs].getAttribute("style") : " ";
+                elem[Gjs].setAttribute("style", b + val);
       } else {
-               var val = (c === "keep") ? document.querySelectorAll(a)[num||0].getAttribute("style") : " ";
-                document.querySelectorAll(a)[num||0].setAttribute("style", b + val);
+               var val = (c === "keep") ? elem[num||0].getAttribute("style") : " ";
+                elem[num||0].setAttribute("style", b + val);
                 break;
           }
         }
         return;
     },
 
-    changeCSS : function(a, b, c, d) {
-        for (i=0; i < document.querySelectorAll(a).length; i++) {
+    setCSS : function(a, b, c, d) {
+        var elem = document.querySelectorAll(a);
+        for (Gjs=0; Gjs< elem.length; Gjs++) {
             if (d === "all") {
-                document.querySelectorAll(a)[i].style.setProperty(b, c);
+                elem[Gjs].style.setProperty(b, c);
             } else {
-                document.querySelectorAll(a)[d||0].style.setProperty(b, c);
+                elem[d||0].style.setProperty(b, c);
                 break;
             }
         }
@@ -72,31 +75,19 @@ var $g = {
     addElement : function(a, b, c, d) {
         var elem = document.createElement(a);
         document.querySelectorAll(b)[d||0].appendChild(elem);
-        $gElem = new Object(); 
-
-        $gElem[c] = function(d, e) {
-            if (d !== 0) {
-                elem.setAttribute("id", d);
-            }
-            if (e !== 0) {
-                elem.setAttribute("class", e);
-            }
-            $gElem[c].custom = function(f, g) {
-                elem.setAttribute(f, g);
-            }
-            return;
-        }
+        elem.setAttribute("id", c);
         return;
     },
 
     removeElement : function(a, b, d) {
-        var len = document.querySelectorAll(a).length;
-        for (i=0; i < len; i++) {
+        var elem = document.querySelectorAll(a);
+        var len = elem.length;
+        for (Gjs=0; Gjs< len; Gjs++) {
             if (b === "all") {
-                var child = document.querySelectorAll(a)[d||0];
+                var child = elem[d||0];
                 child.parentNode.removeChild(child);
             } else {
-                var child = document.querySelectorAll(a)[d||0];
+                var child = elem[d||0];
                 child.parentNode.removeChild(child);
                 break;
             }
@@ -108,6 +99,17 @@ var $g = {
         document.querySelectorAll(a)[d||0].setAttribute(b, c);
         return;
     },
+
+    hide : function(a, b) {
+        document.querySelectorAll(a)[b||0].style.display = "none";
+        return;
+    },
+
+    show : function(a, b) {
+        document.querySelectorAll(a)[b||0].style.display = "block";
+        return;
+    },
+
     when : function(a, b, c, d) {
         if (a === "window") {
             window.addEventListener(b, c);
@@ -211,7 +213,7 @@ var $g = {
     },
         
     fadeOutStart : function(a, b, c, d, e, f) {
-       var num = (e === "off") ? f : e;
+        var num = (e === "off") ? f : e;
         var elem = document.querySelectorAll(a)[num||0];
         elem.style.transform = b + c;
         elem.style.transition =  d + "s";
