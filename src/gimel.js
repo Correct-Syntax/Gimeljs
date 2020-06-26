@@ -1,13 +1,12 @@
 /**
  * --------------------------------------------------------------------------
- * Gimel.js v1.1.5 (C) 2020 Noah Rahm, Correct Syntax & other contributers
+ * Gimel.js v2.0.0 (C) 2020 Noah Rahm, Correct Syntax & other contributers
  * Licensed under BSD 3-Clause
  * --------------------------------------------------------------------------
  */
 
 // Change the "$g" to change the access point for gimel.js
 var $g = {
-
 
     /**
      * ------------------------------------------------------------------------
@@ -27,7 +26,7 @@ var $g = {
             var num = (c === "add") ? d : c;
             if (num === "all") {
                var val = (c === "add") ? elem[Gjs||0].innerHTML : " ";
-                elem[i||0].innerHTML = val + " " + b;
+                elem[Gjs||0].innerHTML = val + " " + b;
             } else {
                var val = (c === "add") ? elem[num||0].innerHTML : " ";
                     elem[num||0].innerHTML = val +" " + b;
@@ -84,7 +83,7 @@ var $g = {
         var len = elem.length;
         for (Gjs=0; Gjs< len; Gjs++) {
             if (b === "all") {
-                var child = elem[d||0];
+                var child = elem[Gjs||0];
                 child.parentNode.removeChild(child);
             } else {
                 var child = elem[d||0];
@@ -127,12 +126,12 @@ var $g = {
     whenToggle : function(a, b, c, d) {
     var elem = document.querySelectorAll(a)[d||0];
     elem.addEventListener("click", function() {
-        var val = elem.getAttribute( "gJST");
-        if(val === "true"){
-            elem.setAttribute("gJST", "false" );
+        var val = elem.getAttribute( "gimelJsT");
+        if (val === "true"){
+            elem.setAttribute("gimelJsT", "false" );
             var tm = setTimeout(c, 1);
-        }else{
-            elem.setAttribute("gJST", "true" );
+        } else {
+            elem.setAttribute("gimelJsT", "true" );
             var tm = setTimeout(b, 1);
         }
     });
@@ -145,30 +144,46 @@ var $g = {
      * ------------------------------------------------------------------------
      */
 
-    typingEffect : function(a, b, c, d) {
-        document.querySelectorAll(a)[d||0].innerHTML = b.charAt(0);
+    typingEffect : function(a, b, c, d, e, f) {
+        var num = (e === typeof number)? e : f;
+        var color = (e !== typeof number && e)? e : "black";
+        var place = document.querySelectorAll(a)[num||0];
         var count = 1;
-        setTimeout(_gjsType, c); 
-        function _gjsType() {
+        var elemA = document.createElement("span");
+        var elemB = document.createElement("span");
+        var elemC = document.createElement("style");
+        place.appendChild(elemA);
+        place.appendChild(elemB);
+        document.body.appendChild(elemC);
+        elemA.setAttribute("id", "_gjsTET");
+        elemB.setAttribute("class", "_gjsTEC");
+        elemB.style.color = color;
+        elemB.innerHTML = d;
+        setTimeout(_gJSType, c);
+        var text = document.querySelectorAll(a + " #_gjsTET")[num||0];
+        text.innerHTML = b.charAt(0);
+        elemC.innerHTML = "._gjsTEC{-webkit-animation:gjsTEC 1.3s ease infinite;animation: gjsTEC 1.3s ease infinite;}\
+        @-webkit-keyframes gjsTEC{40%{opacity:1;}41%{opacity:0;}80%{opacity:0;}81%{opacity:1;}}\
+        @keyframes gjsTEC {0%{opacity:1;}40%{opacity:1;}41%{opacity:0;}80%{opacity:0;}81%{opacity:1;}100%{opacity:1;}}";
+        function _gJSType() {
             if (count < b.length) {
-                document.querySelectorAll(a)[d||0].innerHTML += b.charAt(count);
+                text.innerHTML += b.charAt(count);
                 count++;
-                setTimeout(_gjsType, c); 
+                setTimeout(_gJSType, c); 
             }
         }
         return;
     },
-    
+
     whenScrollTo : function(a, b, c) {
-        window.addEventListener("scroll", _gjsPoint);
         var elem = document.querySelectorAll(a)[c||0].offsetTop - (window.innerHeight / 2);
         var once = false;
-        function _gjsPoint() {
-            if (pageYOffset > elem && once === false) {
+        window.addEventListener("scroll", function(){ 
+        if (pageYOffset > elem && once === false) {
                 b();
                 once = true;
             }
-        }
+        });
         return;
     },
 
