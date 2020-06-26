@@ -419,8 +419,9 @@ Example
 
 .. code-block:: js
 
-    $g.whenTimeUp( 3000, function(){
-    $g.changeCSS("p", "font-size", "24px", 1);
+    // time is in milliseconds
+   $g.whenTimeUp( 3000, function(){
+   $g.setCSS("p", "font-size", "24px", 1);
     });
 
 `try-in-editor-10`_
@@ -462,10 +463,10 @@ Example
 .. code-block:: js
 
     $g.whenToggle( "#demo", function(){
-    $g.changeCSS(" #demo", "color", "red");
+    $g.setCSS(" #demo", "color", "red");
     },
     function(){
-    $g.changeCSS(" #demo", "color", "green");
+    $g.setCSS(" #demo", "color", "green");
     });
 
 `try-in-editor-11`_ 
@@ -502,17 +503,20 @@ Effect Methods
 TypingEffect
 ------------
 
-.. js:method:: $g.typingEffect(selector, html, time, [numberselector]);
+.. js:method:: $g.typingEffect(selector, html, time, cursor, [cursor-color], [numberselector]);
    
    Sets a typing effect to the text of an element.
 
    :param string selector: CSS selector to select the element you want to add the typing effect to. Must be either an ``id``, ``class name`` or ``tag name``.
    :param string html: The text you want to type.
    :param string time: How fast you want the text to be type. `Here-is-an-example-showing-this`_.
+   :param string cursor: What you want the cursor to be . `Here-is-an-example-of-how-this-works`_.
+   :param string cursor-color: Here you can set the color of the cursor. `See-this-example`_.
    :param integer numberselector: See :ref:`Number-Selector`. 
 
    .. _Here-is-an-example-showing-this: examples/typingEffect-02.html
-
+   .. _Here-is-an-example-of-how-this-works: examples/typingEffect-05.html
+   .. _See-this-example: examples/typingEffect-06.html
 
 Example
 ^^^^^^^
@@ -520,7 +524,8 @@ Example
 .. code-block:: js
 
     // Time in milliseconds
-    $g.typingEffect("#demo", "Simple, Easy, Neat and most importantly FUN!", 170);
+    $g.typingEffect("#demo", "Simple, Easy, Neat and most importantly FUN!", 150, "|");
+
 
 
 `try-in-editor-13`_
@@ -530,8 +535,11 @@ Example
 .. note::
     Do not use  HTML as typing content, it will not render; as seen in `this-example.`_ You can still style text, just style the element you are typing the text in; `like-this`_.
 
+
    .. _this-example.: examples/typingEffect-03.html
    .. _like-this: examples/typingEffect-04.html
+
+
 
 .. _fadeIn:
 

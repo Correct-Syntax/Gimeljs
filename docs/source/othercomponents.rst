@@ -210,16 +210,16 @@ Main
 `mouseout`
  | The event occurs when a user moves the mouse pointer out of an element, or out of one of its children
 
-``animationend`` 
+`animationend`
  | The event occurs when a CSS animation has completed
 
-``animationiteration`` 
+`animationiteration` 
  | The event occurs when a CSS animation is repeated
 
-``animationstart`` 
+`animationstart` 
  | The event occurs when a CSS animation has started
 
-``transitionend`` 
+`transitionend` 
  | The event occurs when a CSS transition has completed
 
 Other
