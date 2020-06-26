@@ -1,0 +1,6 @@
+
+# Ignore minified file
+src/gimel.min.js
+
+# Ignore built docs
+docs/build
