@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Gimel.js v2.0.0 (C) 2020 Noah Rahm, Correct Syntax & other contributers
+ * Gimel.js v2.0.1 (C) 2020 Noah Rahm, Correct Syntax & other contributors
  * Licensed under BSD 3-Clause
  * --------------------------------------------------------------------------
  */
@@ -127,10 +127,10 @@ var $g = {
     var elem = document.querySelectorAll(a)[d||0];
     elem.addEventListener("click", function() {
         var val = elem.getAttribute( "gimelJsT");
-        if (val === "true"){
+        if(val === "true"){
             elem.setAttribute("gimelJsT", "false" );
             var tm = setTimeout(c, 1);
-        } else {
+        }else{
             elem.setAttribute("gimelJsT", "true" );
             var tm = setTimeout(b, 1);
         }
@@ -159,20 +159,24 @@ var $g = {
         elemB.setAttribute("class", "_gjsTEC");
         elemB.style.color = color;
         elemB.innerHTML = d;
-        setTimeout(_gJSType, c);
         var text = document.querySelectorAll(a + " #_gjsTET")[num||0];
         text.innerHTML = b.charAt(0);
         elemC.innerHTML = "._gjsTEC{-webkit-animation:gjsTEC 1.3s ease infinite;animation: gjsTEC 1.3s ease infinite;}\
         @-webkit-keyframes gjsTEC{40%{opacity:1;}41%{opacity:0;}80%{opacity:0;}81%{opacity:1;}}\
         @keyframes gjsTEC {0%{opacity:1;}40%{opacity:1;}41%{opacity:0;}80%{opacity:0;}81%{opacity:1;}100%{opacity:1;}}";
-        function _gJSType() {
-            if (count < b.length) {
-                text.innerHTML += b.charAt(count);
-                count++;
-                setTimeout(_gJSType, c); 
-            }
-        }
-        return;
+        let gimelTyping = function(time) {
+            setTimeout(function() {
+                if (count < b.length) {
+                    text.innerHTML += b.charAt(count);
+                    count++;
+                    gimelTyping(c);
+                }
+            }, time);
+        };
+        setTimeout(function(){
+            gimelTyping(0);
+        }, c);
+    return;
     },
 
     whenScrollTo : function(a, b, c) {
@@ -186,6 +190,7 @@ var $g = {
         });
         return;
     },
+
 
     fadeIn : function(a, b, c, d, e) {
        var num = (d === "off") ? e : d;
